@@ -81,6 +81,9 @@ jobs:
         git clone ${{ github.event.inputs.SYNC_URL }}
         cd sync
         ./orangefox_sync.sh --branch ${{ github.event.inputs.MANIFEST_BRANCH }} --path ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
+        git clone https://github.com/Spacewar-dev/android_kernel_nothing_sm7325.git ./kernel/nothing/sm7325 -b 14.0
+        git clone https://github.com/TheMuppets/proprietary_vendor_nothing_Spacewar.git ./vendor/nothing/Spacewar -b lineage-20
+        
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Clone device tree
@@ -102,6 +105,7 @@ jobs:
       uses: pierotofy/set-swap-space@master
       with:
         swap-size-gb: 12
+        continue-on-error: true
 
     - name: Building recovery
       run: |
