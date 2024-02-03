@@ -93,7 +93,7 @@ jobs:
       run: |
         cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
         git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
-        git clone https://github.com/DeathgamerB/android_kernel_msm-5.4_nothing_sm7325.git ./kernel/nothing/sm7325 -b sm7325/u/obt
+        git clone https://github.com/PixysOS-Devices/kernel_nothing_sm7325.git ./kernel/nothing/sm7325 -b fourteen
         git clone https://github.com/TheMuppets/proprietary_vendor_nothing_Spacewar.git ./vendor/nothing/Spacewar -b lineage-20
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
