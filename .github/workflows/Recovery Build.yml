@@ -14,15 +14,15 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/DeathgamerB/OFRP-device_nothing_Spacewar.git'
+        default: 'https://github.com/DeathgamerB/OFRP_device_google_husky.git'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
-        default: 'master'
+        default: 'main'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/nothing/Spacewar'
+        default: 'device/google/husky'
       COMMON_TREE_URL:
         description: 'COMMON_TREE_URL (if no common tree, leave blank)'
         required: false
@@ -32,11 +32,11 @@ on:
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: 'Spacewar'
+        default: 'husky'
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'twrp_Spacewar'
+        default: 'omni_husky'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
@@ -93,8 +93,7 @@ jobs:
       run: |
         cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
         git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
-        git clone https://github.com/PixysOS-Devices/kernel_nothing_sm7325.git ./kernel/nothing/sm7325 -b fourteen
-        git clone https://github.com/TheMuppets/proprietary_vendor_nothing_Spacewar.git ./vendor/nothing/Spacewar -b lineage-20
+        git clone https://github.com/TheMuppets/proprietary_vendor_google_husky.git ./vendor/google/husky -b lineage-21
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Clone common tree
