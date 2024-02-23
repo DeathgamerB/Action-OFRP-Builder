@@ -94,7 +94,7 @@ jobs:
         cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
         git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
         git clone https://github.com/TheMuppets/proprietary_vendor_google_husky.git ./vendor/google/husky -b lineage-21
-        git clone https://github.com/TeamWin/android_vendor_omni.git ./vendor/omni
+        git clone https://github.com/DeathgamerB/android_vendor_omni.git  ./vendor/omni
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Clone common tree
